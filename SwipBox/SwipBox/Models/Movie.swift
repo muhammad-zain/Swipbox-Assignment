@@ -26,8 +26,8 @@ struct Movie: MovieProtocol, Codable {
     var releaseDate: String?
     var rating: Double?
     
-    private var posterPath: String?
-    private var backdropPath: String?
+    var posterPath: String?
+    var backdropPath: String?
     
     enum CodingKeys: String, CodingKey {
         case id, title, tagline, overview

@@ -23,8 +23,9 @@ final class MoviesListViewController: BaseViewController {
     
     private func setupViewModel() {
         let networkManager: NetworkManagerProtocol = NetworkManager()
-        let service: MovieListServiceProtocol = MovieListService(networkManager: networkManager)
-        viewModel = MovieListViewModel(service: service)
+        let netwrokDataService: MovieListServiceProtocol = MovieListService(networkManager: networkManager)
+        let coreDataSerice: MovieListServiceProtocol = LocalStorageMovieListService()
+        viewModel = MovieListViewModel(service: Reachability.isConnectedToNetwork() ? netwrokDataService : coreDataSerice)
         viewModel.delegate = self
     }
     
@@ -87,6 +88,7 @@ extension MoviesListViewController: UICollectionViewDelegate, UICollectionViewDa
 extension MoviesListViewController: MovieListViewModelDelegate {
     func dataLoaded(_ count: Int, isFirstPage: Bool) {
         DispatchQueue.main.async {
+            self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.hideLoadingIndicator()
             self.collectionView.reloadData()
         }

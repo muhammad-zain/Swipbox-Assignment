@@ -31,6 +31,19 @@ struct MovieListService: MovieListServiceProtocol {
             case .success(let data):
                 do {
                     let response = try JSONDecoder().decode(PopularMoviesResponse.self, from: data)
+                    
+                    for movie in response.movies {
+                        if let movieModel = DataModel.shared.entity(entity: MovieModel.self, id: "\(movie.id)") {
+                            movieModel.id = Int32(movie.id)
+                            movieModel.title = movie.title
+                            movieModel.overview = movie.overview
+                            movieModel.releaseDate = movie.releaseDate
+                            movieModel.backdropPath = movie.backdropPath
+                            movieModel.posterPath = movie.posterPath
+                            movieModel.rating = movie.rating ?? 0.0
+                        }
+                    }
+                    
                     completion(.success(response.movies))
                 } catch {
                     completion(.failure(NetworkError.invalidData))
