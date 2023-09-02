@@ -23,7 +23,7 @@ extension UICollectionView {
         return cell
     }
     
-    private var loadingViewTag: Int { return 9999 }
+    private var loadingViewTag: Int { return 9998 }
     
     func showLoadingIndicator() {
         let indicatorView = UIActivityIndicatorView(style: .large)
@@ -42,10 +42,36 @@ extension UICollectionView {
         isUserInteractionEnabled = false
     }
     
+    var emptyMessageLabelTag: Int { return 9999 }
+    
     func hideLoadingIndicator() {
         if let indicatorView = viewWithTag(loadingViewTag) as? UIActivityIndicatorView {
             indicatorView.removeFromSuperview()
         }
         isUserInteractionEnabled = true
+    }
+    
+    func showMessageLabel(with message: String) {
+        let label = UILabel()
+        label.text = message
+        label.numberOfLines = 0
+        label.font = .preferredFont(forTextStyle: .title3)
+        label.textAlignment = .center
+        label.textColor = .darkGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: centerXAnchor),
+            label.widthAnchor.constraint(equalToConstant: frame.width  * 0.8)
+        ])
+        label.tag = emptyMessageLabelTag
+    }
+    
+    func hideEmptyMessageLabel() {
+        if let label = viewWithTag(emptyMessageLabelTag) as? UILabel {
+            label.removeFromSuperview()
+        }
     }
 }

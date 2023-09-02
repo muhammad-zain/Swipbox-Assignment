@@ -90,7 +90,15 @@ extension MoviesListViewController: MovieListViewModelDelegate {
         DispatchQueue.main.async {
             self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.hideLoadingIndicator()
-            self.collectionView.reloadData()
+            
+            if count == 0 {
+                if !Reachability.isConnectedToNetwork() {
+                    self.collectionView.showMessageLabel(with: "Turn on cellular data or use Wi-Fi to access the movies")
+                }
+            } else {
+                self.collectionView.hideEmptyMessageLabel()
+                self.collectionView.reloadData()
+            }
         }
     }
     
