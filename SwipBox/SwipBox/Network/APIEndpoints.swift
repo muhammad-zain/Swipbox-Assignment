@@ -9,4 +9,5 @@ import Foundation
 
 struct APIEndpoints {
     static let popularMovies = AppConfig.baseURL + "3/movie/popular"
+    static let movieDetail = AppConfig.baseURL + "3/movie/%@"
 }

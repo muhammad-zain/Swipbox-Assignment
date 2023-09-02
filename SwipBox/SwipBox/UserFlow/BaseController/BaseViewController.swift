@@ -13,6 +13,10 @@ class BaseViewController: UIViewController {
         return AlertPresenter(self)
     }()
     
+    lazy var navigator: Navigator = {
+        return Navigator(self)
+    }()
+    
     deinit {
         debugPrint("deinit \(type(of: self))")
     }

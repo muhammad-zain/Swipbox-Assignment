@@ -22,4 +22,30 @@ extension UICollectionView {
         
         return cell
     }
+    
+    private var loadingViewTag: Int { return 9999 }
+    
+    func showLoadingIndicator() {
+        let indicatorView = UIActivityIndicatorView(style: .large)
+        indicatorView.startAnimating()
+        
+        addSubview(indicatorView)
+        
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            indicatorView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        indicatorView.tag = loadingViewTag
+        
+        isUserInteractionEnabled = false
+    }
+    
+    func hideLoadingIndicator() {
+        if let indicatorView = viewWithTag(loadingViewTag) as? UIActivityIndicatorView {
+            indicatorView.removeFromSuperview()
+        }
+        isUserInteractionEnabled = true
+    }
 }

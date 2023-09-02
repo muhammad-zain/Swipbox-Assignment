@@ -28,6 +28,7 @@ final class MoviesListViewController: BaseViewController {
     }
     
     private func fetchMovies() {
+        collectionView.showLoadingIndicator()
         viewModel.fetchMovies()
     }
 }
@@ -50,8 +51,12 @@ extension MoviesListViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width - 64)/3
+        let size = (collectionView.frame.width - 40)/3
         return CGSize(width: size, height: size * 1.5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigator.navigate(.movieDetail(viewModel.itemAt(indexPath.row)))
     }
 }
 
@@ -59,12 +64,14 @@ extension MoviesListViewController: UICollectionViewDelegate, UICollectionViewDa
 extension MoviesListViewController: MovieListViewModelDelegate {
     func dataLoaded(_ callCount: Int) {
         DispatchQueue.main.async {
+            self.collectionView.hideLoadingIndicator()
             self.collectionView.reloadData()
         }
     }
     
     func onFailedLoadingData(_ error: Error) {
         DispatchQueue.main.async {
+            self.collectionView.hideLoadingIndicator()
             self.alertPresenter.showErrorMessageAlert(message: error.localizedDescription)
         }
     }
