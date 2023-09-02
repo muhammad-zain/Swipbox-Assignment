@@ -15,9 +15,10 @@ final class MoviesListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(ofType: MovieListCollectionViewCell.self)
-        setupViewModel()
         
-        fetchMovies()
+        setupViewModel()
+        setupRefreshControl()
+        fetchInitialMovies()
     }
     
     private func setupViewModel() {
@@ -27,9 +28,23 @@ final class MoviesListViewController: BaseViewController {
         viewModel.delegate = self
     }
     
-    private func fetchMovies() {
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshMovies), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
+    }
+    
+    private func fetchInitialMovies() {
         collectionView.showLoadingIndicator()
-        viewModel.fetchMovies()
+        viewModel.fetchInitialMovies()
+    }
+    
+    @objc private func refreshMovies() {
+        viewModel.fetchInitialMovies()
+    }
+    
+    private func fetchNextPage() {
+        viewModel.fetchNextPage()
     }
 }
 
@@ -58,11 +73,19 @@ extension MoviesListViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigator.navigate(.movieDetail(viewModel.itemAt(indexPath.row)))
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if collectionView.contentOffset.y >= collectionView.contentSize.height - collectionView.bounds.size.height {
+            if !viewModel.isLoading && viewModel.totalMovies > 0 {
+                fetchNextPage()
+            }
+        }
+    }
 }
 
 // MARK: MovieListViewModelDelegate
 extension MoviesListViewController: MovieListViewModelDelegate {
-    func dataLoaded(_ callCount: Int) {
+    func dataLoaded(_ count: Int, isFirstPage: Bool) {
         DispatchQueue.main.async {
             self.collectionView.hideLoadingIndicator()
             self.collectionView.reloadData()

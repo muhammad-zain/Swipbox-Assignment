@@ -15,7 +15,7 @@
 		62A161F62AA254E60033BF79 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161F52AA254E60033BF79 /* MoviesListViewController.swift */; };
 		62A161F82AA254FC0033BF79 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161F72AA254FC0033BF79 /* MovieDetailViewController.swift */; };
 		62A161FB2AA255390033BF79 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161FA2AA255390033BF79 /* BaseViewController.swift */; };
-		62A162002AA256A90033BF79 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161FF2AA256A90033BF79 /* UICollectionViewCell+Extension.swift */; };
+		62A162002AA256A90033BF79 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A161FF2AA256A90033BF79 /* UICollectionView+Extension.swift */; };
 		62A162032AA256FD0033BF79 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162022AA256FD0033BF79 /* ReusableView.swift */; };
 		62A162052AA257450033BF79 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162042AA257450033BF79 /* UIStoryboard+Extension.swift */; };
 		62A162082AA258530033BF79 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162072AA258530033BF79 /* MovieListViewModel.swift */; };
@@ -47,7 +47,7 @@
 		62A161F52AA254E60033BF79 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesListViewController.swift; path = SwipBox/UserFlow/MovieList/MoviesListViewController.swift; sourceTree = SOURCE_ROOT; };
 		62A161F72AA254FC0033BF79 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		62A161FA2AA255390033BF79 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		62A161FF2AA256A90033BF79 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		62A161FF2AA256A90033BF79 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		62A162022AA256FD0033BF79 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		62A162042AA257450033BF79 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		62A162072AA258530033BF79 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				62A161F92AA255200033BF79 /* BaseController */,
-				62A161F42AA254670033BF79 /* MovieDetail */,
 				62A161F32AA254600033BF79 /* MovieList */,
+				62A161F42AA254670033BF79 /* MovieDetail */,
 			);
 			path = UserFlow;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 		62A161FE2AA2561B0033BF79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				62A161FF2AA256A90033BF79 /* UICollectionViewCell+Extension.swift */,
+				62A161FF2AA256A90033BF79 /* UICollectionView+Extension.swift */,
 				62A162042AA257450033BF79 /* UIStoryboard+Extension.swift */,
 				62A162262AA301F80033BF79 /* Date+Extension.swift */,
 				62A162282AA302040033BF79 /* String+Extension.swift */,
@@ -328,7 +328,7 @@
 				62A162032AA256FD0033BF79 /* ReusableView.swift in Sources */,
 				62A162052AA257450033BF79 /* UIStoryboard+Extension.swift in Sources */,
 				62A162132AA25A360033BF79 /* Movie.swift in Sources */,
-				62A162002AA256A90033BF79 /* UICollectionViewCell+Extension.swift in Sources */,
+				62A162002AA256A90033BF79 /* UICollectionView+Extension.swift in Sources */,
 				62A162232AA2FD160033BF79 /* MovieDetailViewModel.swift in Sources */,
 				62A162082AA258530033BF79 /* MovieListViewModel.swift in Sources */,
 				62A162272AA301F80033BF79 /* Date+Extension.swift in Sources */,

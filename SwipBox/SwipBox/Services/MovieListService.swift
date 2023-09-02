@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 protocol MovieListServiceProtocol {
-    func fetchMovies(completion: @escaping (Result<[MovieProtocol], Error>) -> Void)
+    func fetchMovies(page: Int, completion: @escaping (Result<[MovieProtocol], Error>) -> Void)
 }
 
 struct MovieListService: MovieListServiceProtocol {
@@ -20,8 +20,8 @@ struct MovieListService: MovieListServiceProtocol {
         self.networkManager = networkManager
     }
 
-    func fetchMovies(completion: @escaping (Result<[MovieProtocol], Error>) -> Void) {
-        guard let url = URL(string: APIEndpoints.popularMovies) else {
+    func fetchMovies(page: Int, completion: @escaping (Result<[MovieProtocol], Error>) -> Void) {
+        guard let url = URL(string: String(format: APIEndpoints.popularMovies, page)) else {
             completion(.failure(NetworkError.invalidURL))
             return
         }

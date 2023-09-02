@@ -1,5 +1,5 @@
 //
-//  UICollectionViewCell+Extension.swift
+//  UICollectionView+Extension.swift
 //  SwipBox
 //
 //  Created by Zain Sidhu on 01/09/2023.
