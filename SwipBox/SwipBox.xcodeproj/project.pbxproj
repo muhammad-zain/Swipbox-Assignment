@@ -41,7 +41,21 @@
 		62A1623A2AA368A40033BF79 /* MovieModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162382AA368A40033BF79 /* MovieModel+CoreDataProperties.swift */; };
 		62A1623C2AA36ECE0033BF79 /* LocalStorageMovieListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A1623B2AA36ECE0033BF79 /* LocalStorageMovieListService.swift */; };
 		62A1623E2AA371DB0033BF79 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A1623D2AA371DB0033BF79 /* Reachability.swift */; };
+		62A162512AA45FB30033BF79 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162502AA45FB30033BF79 /* UICollectionViewExtension.swift */; };
+		62A162532AA462D90033BF79 /* StringToDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162522AA462D90033BF79 /* StringToDateTests.swift */; };
+		62A162552AA4654D0033BF79 /* DateToStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162542AA4654D0033BF79 /* DateToStringTests.swift */; };
+		62A162582AA467E80033BF79 /* MovieDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A162572AA467E80033BF79 /* MovieDetailService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62A162472AA45F600033BF79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62A161D32AA253F90033BF79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62A161DA2AA253F90033BF79;
+			remoteInfo = SwipBox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		62A161DB2AA253F90033BF79 /* SwipBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +93,11 @@
 		62A162382AA368A40033BF79 /* MovieModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		62A1623B2AA36ECE0033BF79 /* LocalStorageMovieListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageMovieListService.swift; sourceTree = "<group>"; };
 		62A1623D2AA371DB0033BF79 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		62A162432AA45F600033BF79 /* SwipBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62A162502AA45FB30033BF79 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		62A162522AA462D90033BF79 /* StringToDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToDateTests.swift; sourceTree = "<group>"; };
+		62A162542AA4654D0033BF79 /* DateToStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringTests.swift; sourceTree = "<group>"; };
+		62A162572AA467E80033BF79 /* MovieDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +109,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62A162402AA45F600033BF79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				62A161DD2AA253F90033BF79 /* SwipBox */,
+				62A162442AA45F600033BF79 /* SwipBoxTests */,
 				62A161DC2AA253F90033BF79 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				62A161DB2AA253F90033BF79 /* SwipBox.app */,
+				62A162432AA45F600033BF79 /* SwipBoxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +298,33 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		62A162442AA45F600033BF79 /* SwipBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				62A162562AA467BD0033BF79 /* Service */,
+				62A1624D2AA45F890033BF79 /* Helpers */,
+			);
+			path = SwipBoxTests;
+			sourceTree = "<group>";
+		};
+		62A1624D2AA45F890033BF79 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				62A162502AA45FB30033BF79 /* UICollectionViewExtension.swift */,
+				62A162522AA462D90033BF79 /* StringToDateTests.swift */,
+				62A162542AA4654D0033BF79 /* DateToStringTests.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		62A162562AA467BD0033BF79 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				62A162572AA467E80033BF79 /* MovieDetailService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +348,24 @@
 			productReference = 62A161DB2AA253F90033BF79 /* SwipBox.app */;
 			productType = "com.apple.product-type.application";
 		};
+		62A162422AA45F600033BF79 /* SwipBoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62A162492AA45F600033BF79 /* Build configuration list for PBXNativeTarget "SwipBoxTests" */;
+			buildPhases = (
+				62A1623F2AA45F600033BF79 /* Sources */,
+				62A162402AA45F600033BF79 /* Frameworks */,
+				62A162412AA45F600033BF79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62A162482AA45F600033BF79 /* PBXTargetDependency */,
+			);
+			name = SwipBoxTests;
+			productName = SwipBoxTests;
+			productReference = 62A162432AA45F600033BF79 /* SwipBoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -305,6 +378,11 @@
 				TargetAttributes = {
 					62A161DA2AA253F90033BF79 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					62A162422AA45F600033BF79 = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+						TestTargetID = 62A161DA2AA253F90033BF79;
 					};
 				};
 			};
@@ -325,6 +403,7 @@
 			projectRoot = "";
 			targets = (
 				62A161DA2AA253F90033BF79 /* SwipBox */,
+				62A162422AA45F600033BF79 /* SwipBoxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +417,13 @@
 				62A161E82AA253FA0033BF79 /* Assets.xcassets in Resources */,
 				62A161E62AA253F90033BF79 /* Main.storyboard in Resources */,
 				62A1621C2AA264E20033BF79 /* MovieListCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62A162412AA45F600033BF79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +466,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62A1623F2AA45F600033BF79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62A162552AA4654D0033BF79 /* DateToStringTests.swift in Sources */,
+				62A162512AA45FB30033BF79 /* UICollectionViewExtension.swift in Sources */,
+				62A162532AA462D90033BF79 /* StringToDateTests.swift in Sources */,
+				62A162582AA467E80033BF79 /* MovieDetailService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62A162482AA45F600033BF79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62A161DA2AA253F90033BF79 /* SwipBox */;
+			targetProxy = 62A162472AA45F600033BF79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		62A161E42AA253F90033BF79 /* Main.storyboard */ = {
@@ -574,6 +679,45 @@
 			};
 			name = Release;
 		};
+		62A1624A2AA45F600033BF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.genie.swipbox.SwipBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwipBox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwipBox";
+			};
+			name = Debug;
+		};
+		62A1624B2AA45F600033BF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.genie.swipbox.SwipBoxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwipBox.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwipBox";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -591,6 +735,15 @@
 			buildConfigurations = (
 				62A161F02AA253FA0033BF79 /* Debug */,
 				62A161F12AA253FA0033BF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62A162492AA45F600033BF79 /* Build configuration list for PBXNativeTarget "SwipBoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62A1624A2AA45F600033BF79 /* Debug */,
+				62A1624B2AA45F600033BF79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

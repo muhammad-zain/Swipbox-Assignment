@@ -11,6 +11,11 @@ extension String {
     func toDate(dateFormat: DateFormats) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat.rawValue
-        return dateFormatter.date(from: self)
+        
+        if let date = dateFormatter.date(from: self), dateFormatter.string(from: date) == self {
+            return date
+        } else {
+            return nil
+        }
     }
 }

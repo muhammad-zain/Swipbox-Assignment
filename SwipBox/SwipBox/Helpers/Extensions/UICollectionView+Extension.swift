@@ -23,7 +23,7 @@ extension UICollectionView {
         return cell
     }
     
-    private var loadingViewTag: Int { return 9998 }
+    var loadingViewTag: Int { return 9998 }
     
     func showLoadingIndicator() {
         let indicatorView = UIActivityIndicatorView(style: .large)
